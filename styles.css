@@ -1,0 +1,62 @@
+/* body {
+  margin: 0;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 32px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px #00000010;
+}
+
+h1 {
+  color: #2563eb;
+}
+
+#pdf-content {
+  background: #f8fafc;
+}
+
+.info {
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  line-height: 1.8;
+}
+
+button {
+  margin-top: 24px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+} */
+
+#addWindowBtn {
+  padding: 5px 15px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  background: #1d4ed8;
+  transition: 0.3s;
+}
+
+#addWindowBtn:active {
+  transform: scale(0.9);
+}
