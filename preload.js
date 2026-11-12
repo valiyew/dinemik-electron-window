@@ -21,3 +21,10 @@ contextBridge.exposeInMainWorld("displayWindowAPI", {
       callback(value);
     }),
 });
+
+contextBridge.exposeInMainWorld("dinemikWindowRenderHtmlAPI", {
+  dinemikWindowRender: (callback) =>
+    ipcRenderer.on("dinemik-window-html", (_event, value) => {
+      callback(value);
+    }),
+});

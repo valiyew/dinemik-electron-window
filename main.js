@@ -68,6 +68,7 @@ function createNewWindow(windowData, count) {
 
   createdWindowDatas.push(customWinData);
   windowDisplayingData.webContents.send("get-win-info", createdWindowDatas);
+  // createdWindow.webContents.send("dinemik-window-html", { title: createdWindow.title, id: createdWindow.id });
 
   // Window moved listenering
   createdWindow.on("move", () => {

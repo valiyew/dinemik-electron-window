@@ -8,7 +8,6 @@ window.countAPI.onCountUpdate((count) => {
 
 addWindowBtn.addEventListener("click", () => {
   countNewWindow++;
-
   window.countIncremementAPI.incrementCounter(countNewWindow);
 });
 
@@ -43,3 +42,11 @@ window.displayWindowAPI.displayWindow((value) => {
     });
   }
 });
+
+// window.dinemikWindowRenderHtmlAPI.dinemikWindowRender((value) => {
+//   document.body.innerHTML = `
+//     <div>
+//       <p>Yaratilgan winowni</p>
+//     </div>
+//   `;
+// });
