@@ -2,7 +2,7 @@ const { app, BrowserWindow, screen, ipcMain } = require("electron");
 const path = require("node:path");
 
 let createdWindowDatas = [];
-const dinemikWidth = 200;
+const dinemikWidth = 400;
 const dinemikHeight = 300;
 let currentCount = 0;
 
@@ -15,8 +15,8 @@ function createWindow() {
   const windowDisplayingDataWidth = 500;
 
   mainWindow = new BrowserWindow({
-    width: 200,
-    height: 300,
+    width: 300,
+    height: screenHeight,
     x: 0,
     y: 0,
     webPreferences: {
@@ -68,7 +68,12 @@ function createNewWindow(windowData, count) {
 
   createdWindowDatas.push(customWinData);
   windowDisplayingData.webContents.send("get-win-info", createdWindowDatas);
-  // createdWindow.webContents.send("dinemik-window-html", { title: createdWindow.title, id: createdWindow.id });
+
+  // Dinemik window control
+  createdWindow.webContents.on("did-finish-load", () => {
+    createdWindow.webContents.send("display-window", "dinemikWindow");
+    createdWindow.webContents.send("dinemik-window-html", customWinData);
+  });
 
   // Window moved listenering
   createdWindow.on("move", () => {
@@ -160,6 +165,8 @@ function createNewWindow(windowData, count) {
     });
     windowDisplayingData.webContents.send("get-win-info", createdWindowDatas);
   });
+
+  createdWindow.loadFile("index.html");
 
   return createdWindow;
 }

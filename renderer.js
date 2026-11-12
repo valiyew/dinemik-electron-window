@@ -40,13 +40,24 @@ window.displayWindowAPI.displayWindow((value) => {
     window.windowMoveAPI.winDatas((value) => {
       renderHtmlContent(value);
     });
+  } else if (value === "dinemikWindow") {
+    document.body.innerHTML = `
+    <div>
+      <p>Bu faqat dinemik window uchun!</p>
+    </div>
+  `;
+    window.dinemikWindowRenderHtmlAPI.dinemikWindowRender((value) => {
+      document.body.innerHTML = `
+        <div>
+          <ul>
+            <li>ID: ${value.title}</li>
+            <li>ID: ${value.id}</li>
+            <li>Bounds: ${JSON.stringify(value.bounds)}</li>
+            <li>Positions: ${JSON.stringify(value.position)}</li>
+            <li>Size: ${JSON.stringify(value.size)}</li>
+          </ul>
+        </div>
+      `;
+    });
   }
 });
-
-// window.dinemikWindowRenderHtmlAPI.dinemikWindowRender((value) => {
-//   document.body.innerHTML = `
-//     <div>
-//       <p>Yaratilgan winowni</p>
-//     </div>
-//   `;
-// });
